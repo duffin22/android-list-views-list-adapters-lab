@@ -14,14 +14,13 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         ArrayList<MadLibs> libs = new ArrayList<>();
-        libs.add(new MadLibs("Horror", 100, 20));
-        libs.add(new MadLibs("Fantasy", 12, 123));
-        libs.add(new MadLibs("Comedy", 10001243, 35));
-        libs.add(new MadLibs("Animation", 2134, 212));
-        libs.add(new MadLibs("Fantasy", 22, 43));
+        libs.add(new MadLibs("AM LabExample", 100, 6));
+
 
         ListView listy = (ListView) findViewById(R.id.mainList);
+
         SimpleAdapter adapty = new SimpleAdapter(this, libs);
+
         if (listy != null) {
             listy.setAdapter(adapty);
         }

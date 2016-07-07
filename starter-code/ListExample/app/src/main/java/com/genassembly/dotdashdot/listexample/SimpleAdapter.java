@@ -1,13 +1,12 @@
 package com.genassembly.dotdashdot.listexample;
 
 import android.content.Context;
+import android.content.Intent;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ArrayAdapter;
 import android.widget.BaseAdapter;
-import android.widget.ImageView;
 import android.widget.TextView;
 
 import java.util.ArrayList;
@@ -18,11 +17,13 @@ import java.util.ArrayList;
 public class SimpleAdapter extends BaseAdapter {
     private final LayoutInflater inflater;
     private final ArrayList<MadLibs> libs;
+    private final Context context;
 
     public SimpleAdapter(Context context, ArrayList<MadLibs> libs) {
         //super();
         inflater = LayoutInflater.from(context);
         this.libs = libs;
+        this.context=context;
     }
 
     @Override
@@ -41,15 +42,14 @@ public class SimpleAdapter extends BaseAdapter {
     }
 
     @Override
-    public View getView(int position, View convertView, ViewGroup parent) {
+    public View getView(final int position, View child, ViewGroup parent) {
 
         Log.d("Postion: " , "" + position);
 
-        View v = convertView;
+        View v = child;
         TextView words, genre, spaces;
 
         if (v == null) {
-
             v = inflater.inflate(R.layout.list_item, parent, false);
         }
 
@@ -60,6 +60,17 @@ public class SimpleAdapter extends BaseAdapter {
         words.setText(String.valueOf(libs.get(position).getWords()));
         genre.setText(String.valueOf(libs.get(position).getGenre()));
         spaces.setText(String.valueOf(libs.get(position).getSpaces()));
+
+        v.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                Log.i("Adaptor","Clicked "+position);
+                Intent intent = new Intent(context.getApplicationContext(),InputActivity.class);
+
+                context.startActivity(intent);
+            }
+        });
 
         return v;
     }

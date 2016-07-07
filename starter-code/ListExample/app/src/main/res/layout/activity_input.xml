@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="co.ga.madlibs.MainActivity" >
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <LinearLayout android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/adjective1_edittext"
+                android:layout_alignParentTop="true"
+                android:hint="enter an adjective"
+                android:layout_marginBottom="@dimen/margin_between_editTexts"/>
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/adjective2_edittext"
+                android:hint="enter an adjective"
+                android:layout_marginBottom="@dimen/margin_between_editTexts"/>
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/noun1_edittext"
+                android:hint="enter a noun"
+                android:layout_marginBottom="@dimen/margin_between_editTexts"/>
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/noun2_edittext"
+                android:hint="enter a noun"
+                android:layout_marginBottom="@dimen/margin_between_editTexts"/>
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/animals_edittext"
+                android:hint="enter a type of animal (plural form)"
+                android:layout_marginBottom="@dimen/margin_between_editTexts"/>
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/game_edittext"
+                android:hint="enter a game"
+                android:layout_marginBottom="@dimen/margin_between_editTexts"/>
+
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Make the magic happen"
+                android:id="@+id/MainButton"/>
+
+        </LinearLayout>
+    </ScrollView>
+</FrameLayout>
